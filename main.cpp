@@ -85,14 +85,14 @@ struct Cursor
         {
             c = Cursor();
             c.session = fromDec(j["session"]);
-            c.toolid = j["toolid"];
-            c.architecture = j["architecture"];
-            c.cursorid = j["cursorid"];
+            c.toolid = j["toolid"].get<std::string>();
+            c.architecture = j["architecture"].get<std::string>();
+            c.cursorid = j["cursorid"].get<std::string>();
             c.va = fromHex(j["va"]);
             c.rva = (uint32_t)fromHex(j["rva"]);
             c.fileoffset = fromHex(j["fileoffset"]);
-            c.filepath = j["filepath"];
-            c.sha1 = j["sha1"];
+            c.filepath = j["filepath"].get<std::string>();
+            c.sha1 = j["sha1"].get<std::string>();
             c.TimeDateStamp = (uint32_t)fromHex(j["TimeDateStamp"]);
             c.imagebase = fromHex(j["imagebase"]);
             c.imagesize = (uint32_t)fromHex(j["imagesize"]);
