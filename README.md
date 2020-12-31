@@ -13,4 +13,4 @@ You can now run `REToolSyncServer` to start listening for clients.
 
 ## Protocol documentation
 
-See [protocol/README.md][./protocol/README.md] for documentation.
+See the `protocol` folder for more information.

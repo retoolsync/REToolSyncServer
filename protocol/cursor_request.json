@@ -1,0 +1,9 @@
+{
+    "type": "cursor_request",
+    "data": {
+        "todo": "some other request data?"
+    },
+    "context": {
+        "todo": "metadata of the executable (hash/filename)"
+    }
+}

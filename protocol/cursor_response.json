@@ -1,0 +1,20 @@
+{
+    "type": "cursor_response",
+    "data": {
+        "cursorid": "disassembly",
+        "va": "0x140001234",
+        "rva": "0x1234",
+        "fileoffset": "0x234"
+    },
+    "context": {
+        "type": "pe",
+        "architecture": "x64",
+        "filepath": "c:\\downloads\\my.exe",
+        "toolid": "x64dbg",
+        "session": 1234,
+        "sha1": "123123123",
+        "TimeDateStamp": "0x12345678",
+        "imagebase": "0x140000000",
+        "imagesize": "0x20000"
+    }
+}
