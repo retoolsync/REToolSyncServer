@@ -2,6 +2,7 @@
 #include <cstring>
 #include <atomic>
 #include <map>
+#include <stdexcept>
 
 // System headers for Sleep
 #ifdef _WIN32
@@ -23,7 +24,7 @@ class WebSocketHandler : public CivetWebSocketHandler
 	{
 		auto found = m_connections.find(conn);
 		if (found == m_connections.end())
-			throw std::exception("Invalid connection state (disconnect)");
+			throw std::runtime_error("Invalid connection state (disconnect)");
 		printf("[%d] WS closed\n", found->second);
 		m_connections.erase(found);
 	}
@@ -39,7 +40,7 @@ class WebSocketHandler : public CivetWebSocketHandler
 		struct mg_connection* conn) override
 	{
 		if (m_connections.find(conn) != m_connections.end())
-			throw std::exception("Invalid connection state (connect)");
+			throw std::runtime_error("Invalid connection state (connect)");
 		m_connections.emplace(conn, m_connectionIndex++);
 
 		printf("[%d] WS ready\n", m_connections[conn]);
